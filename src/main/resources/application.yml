@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_test?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+
+  sql:
+    init:
+      mode: always
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: debug
+    org.springframework.boot.autoconfigure: info
+    org.apache.coyote.http11: debug
